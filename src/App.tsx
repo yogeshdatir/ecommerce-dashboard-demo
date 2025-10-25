@@ -1,9 +1,10 @@
 import './App.css';
+import ProductList from './features/products/components/ProductList';
 
 function App() {
   return (
     <>
-      <button className="rounded-sm border-2 p-2">Test Tailwind</button>
+      <ProductList />
     </>
   );
 }
