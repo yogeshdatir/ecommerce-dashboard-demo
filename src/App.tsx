@@ -1,7 +1,11 @@
 import './App.css';
 
 function App() {
-  return <></>;
+  return (
+    <>
+      <button className="rounded-sm border-2 p-2">Test Tailwind</button>
+    </>
+  );
 }
 
 export default App;

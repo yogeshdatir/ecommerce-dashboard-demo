@@ -77,3 +77,44 @@ export default defineConfig([
   },
 ]);
 ```
+
+## Development
+
+### Available Scripts
+
+```bash
+yarn dev          # Start dev server
+yarn build        # Build for production (includes type check)
+yarn lint         # Run ESLint
+yarn test         # Run tests in watch mode
+yarn test:ci      # Run tests once
+yarn preview      # Preview production build
+```
+
+### Pre-Push Checklist
+
+Before pushing code, ensure:
+
+```bash
+yarn lint         # ✅ No linting errors
+yarn build        # ✅ TypeScript compiles & builds successfully
+yarn test:ci      # ✅ All tests pass
+```
+
+## CI/CD
+
+### GitHub Actions
+
+- Runs on every PR to `main`
+- Checks: Lint → Build (+ Type Check) → Tests
+- Branch protection ensures quality
+
+### For Larger Teams
+
+With 3-5 engineers, I would add:
+
+- **Husky + lint-staged**: Run checks on staged files only
+- **Commitlint**: Enforce conventional commits
+- **Coverage thresholds**: Maintain 80%+ test coverage
+- **Automated dependency updates**: Dependabot
+- **Pre-commit hooks**: Catch issues before CI
