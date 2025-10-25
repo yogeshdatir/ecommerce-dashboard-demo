@@ -9,9 +9,10 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest",
+    "test:ci": "vitest run --coverage",
     "test:ui": "vitest --ui",
-    "test:coverage": "vitest --coverage",
-    "test:ci": "vitest run"
+    "lint:fix": "eslint . --fix",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.16",
