@@ -2,12 +2,12 @@
 
 ## 🎯 Planning & Setup
 
-- [ ] Choose a public API (consider: GitHub API, CoinGecko, OpenWeather, or similar)
-- [ ] Initialize Vite + React + TypeScript project
-- [ ] Set up Tailwind CSS for styling
-- [ ] Configure Jest + React Testing Library
+- [x] Choose a public API (consider: GitHub API, CoinGecko, OpenWeather, or similar)
+- [x] Initialize Vite + React + TypeScript project
+- [x] Set up Tailwind CSS for styling
+- [x] Configure Vitest (Jest) + React Testing Library
 - [ ] Set up basic folder structure for scalability
-- [ ] Create initial Git repository
+- [x] Create initial Git repository
 
 ## 💻 Core Development
 
