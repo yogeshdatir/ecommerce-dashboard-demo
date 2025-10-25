@@ -1,15 +1,21 @@
-# React + TypeScript + Vite
+# Fakestore Dashboard
+
+A modern e-commerce dashboard showcasing:
+
+- Clean architecture and scalable code organization
+- Comprehensive testing and error handling
+- Dark/light mode and advanced filtering
+- Leadership perspective on scaling and team practices
+
+Built with: React, TypeScript, Vite, Tailwind CSS, Jest
+
+## About This Project
+
+This is a frontend dashboard application built as a technical assessment to demonstrate frontend leadership capabilities, scalable architecture, and production-ready code quality.
+
+## React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
 ## Expanding the ESLint configuration
 
@@ -40,15 +46,15 @@ export default defineConfig([
       // other options...
     },
   },
-])
+]);
 ```
 
 You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
 ```js
 // eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+import reactX from 'eslint-plugin-react-x';
+import reactDom from 'eslint-plugin-react-dom';
 
 export default defineConfig([
   globalIgnores(['dist']),
@@ -69,5 +75,5 @@ export default defineConfig([
       // other options...
     },
   },
-])
+]);
 ```
