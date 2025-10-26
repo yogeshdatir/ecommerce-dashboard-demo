@@ -24,15 +24,15 @@
 - [x] Implement search functionality
 - [x] Add filtering capabilities ~~(at least 2 filters)~~
 - [x] Add sorting functionality ~~(multiple columns/criteria)~~
-- [ ] Create dark/light mode toggle
-- [ ] Persist theme preference (localStorage or state)
+- [x] Create dark/light mode toggle
+- [x] Persist theme preference (localStorage or state)
 
 ### Code Quality
 
 - [x] Break components into smaller, reusable modules
 - [x] Add TypeScript type annotations throughout
-- [ ] Write at least 1 unit test for a key component
-- [ ] Optional: Add tests for hooks/utilities if applicable
+- [x] Write at least 1 unit test for a key component
+- [ ] ~~Optional: Add tests for hooks/utilities if applicable~~
 
 ## 📝 Documentation & Leadership
 
