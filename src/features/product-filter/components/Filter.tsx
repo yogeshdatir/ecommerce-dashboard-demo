@@ -83,8 +83,9 @@ export default function Filter() {
           onChange={handleFilterChange}
           className={baseSelect}
         >
-          <option value="asc">Sort: Ascending</option>
-          <option value="desc">Sort: Descending</option>
+          <option value="">Select sorting order</option>
+          <option value="asc">Sort by price low to high</option>
+          <option value="desc">Sort by price high to low</option>
         </select>
         <span className="pointer-events-none absolute inset-y-0 right-2 flex items-center text-gray-400 rotate-90">
           {'>'}

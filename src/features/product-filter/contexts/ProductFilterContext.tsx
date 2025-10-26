@@ -3,7 +3,7 @@ import { createContext, useContext, useState, type ReactNode } from 'react';
 export type Filters = {
   selectedCategory?: string;
   searchTerm?: string;
-  sortOrder?: string;
+  sortOrder?: 'asc' | 'desc';
 };
 
 type ProductFilterContextType = {

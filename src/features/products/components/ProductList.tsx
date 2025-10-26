@@ -3,8 +3,13 @@ import axios from 'axios';
 import type { Product, ProductsData } from '../types';
 import ProductCard from './ProductCard';
 import Spinner from '../../../components/Spinner';
+import { useProductFilter } from '../../product-filter/contexts/ProductFilterContext';
 
 const ProductList = () => {
+  const { filters } = useProductFilter();
+
+  const { selectedCategory, searchTerm, sortOrder } = filters || {};
+
   const [productsData, setProductsData] = useState<ProductsData | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<unknown>('');
@@ -12,7 +17,25 @@ const ProductList = () => {
   const getProducts = useCallback(async () => {
     setLoading(true);
     try {
-      const response = await axios.get('https://dummyjson.com/products');
+      const productsURL = new URL('https://dummyjson.com/products');
+
+      if (selectedCategory) {
+        productsURL.pathname += `/category/${selectedCategory}`;
+      } else if (searchTerm) {
+        productsURL.pathname += '/search';
+        productsURL.searchParams.set('q', searchTerm);
+      }
+
+      productsURL.searchParams.set('limit', '0');
+
+      // Add sort order
+      if (sortOrder) {
+        productsURL.searchParams.set('sortBy', 'price');
+        productsURL.searchParams.set('order', sortOrder);
+      }
+
+      const finalURL = productsURL.toString();
+      const response = await axios.get(finalURL);
       setProductsData({ ...response.data });
     } catch (error) {
       console.log(error);
@@ -20,7 +43,7 @@ const ProductList = () => {
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [selectedCategory, searchTerm, sortOrder]);
 
   useEffect(() => {
     getProducts();
