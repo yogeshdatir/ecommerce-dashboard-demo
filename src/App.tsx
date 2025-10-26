@@ -1,4 +1,3 @@
-import './App.css';
 import Filter from './features/product-filter/components/Filter';
 import { ProductFilterProvider } from './features/product-filter/contexts/ProductFilterContext';
 import ProductList from './features/products/components/ProductList';

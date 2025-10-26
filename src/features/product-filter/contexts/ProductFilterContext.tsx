@@ -1,8 +1,14 @@
 import { createContext, useContext, useState, type ReactNode } from 'react';
 
+export type Filters = {
+  selectedCategory?: string;
+  searchTerm?: string;
+  sortOrder?: string;
+};
+
 type ProductFilterContextType = {
-  filters: any;
-  setFilters: React.Dispatch<any>;
+  filters: Filters | null;
+  setFilters: React.Dispatch<React.SetStateAction<Filters | null>>;
 };
 
 const ProductFilterContext = createContext<
@@ -10,7 +16,7 @@ const ProductFilterContext = createContext<
 >(undefined);
 
 export function ProductFilterProvider({ children }: { children: ReactNode }) {
-  const [filters, setFilters] = useState<any>(null);
+  const [filters, setFilters] = useState<Filters | null>(null);
 
   const value = { filters, setFilters };
 
