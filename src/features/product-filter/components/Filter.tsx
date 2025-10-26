@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState, type SyntheticEvent } from 'react';
 import SkeletonLoader from '../../../components/SkeletonLoader';
+import { useDebounce } from '../../../hooks/useDebounce';
 import { useProductFilter } from '../contexts/ProductFilterContext';
 import ThemeToggle from '../../theme/ThemeToggle';
 
@@ -10,6 +11,16 @@ export default function Filter() {
   const { selectedCategory, searchTerm, sortOrder } = filters || {};
 
   const [categoryList, setCategoryList] = useState([]);
+  const [localSearchTerm, setLocalSearchTerm] = useState(searchTerm || '');
+  const debouncedSearchTerm = useDebounce(localSearchTerm, 500);
+
+  // Update filters when debounced search term changes
+  useEffect(() => {
+    setFilters((prevState) => ({
+      ...prevState,
+      searchTerm: debouncedSearchTerm,
+    }));
+  }, [debouncedSearchTerm, setFilters]);
 
   useEffect(() => {
     const fetchCategoryList = async () => {
@@ -24,10 +35,14 @@ export default function Filter() {
 
   const handleFilterChange = (e: SyntheticEvent) => {
     const target = e.target as HTMLInputElement | HTMLSelectElement;
-    setFilters((prevState) => ({
-      ...prevState,
-      [target.name]: target.value,
-    }));
+    if (target.name === 'searchTerm') {
+      setLocalSearchTerm(target.value);
+    } else {
+      setFilters((prevState) => ({
+        ...prevState,
+        [target.name]: target.value,
+      }));
+    }
   };
 
   const baseSelect =
@@ -67,7 +82,7 @@ export default function Filter() {
       {/* Search */}
       <input
         type="text"
-        value={searchTerm}
+        value={localSearchTerm}
         name="searchTerm"
         onChange={handleFilterChange}
         placeholder="Search..."
