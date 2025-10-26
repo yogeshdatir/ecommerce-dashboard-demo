@@ -6,33 +6,33 @@
 - [x] Initialize Vite + React + TypeScript project
 - [x] Set up Tailwind CSS for styling
 - [x] Configure Vitest (Jest) + React Testing Library
-- [ ] Set up basic folder structure for scalability
+- [x] Set up basic folder structure for scalability
 - [x] Create initial Git repository
 
 ## 💻 Core Development
 
 ### Data Fetching & Display
 
-- [ ] Create API service/hooks for data fetching
-- [ ] Implement loading states (skeleton/spinner)
-- [ ] Implement error handling and error boundaries
-- [ ] Build dashboard/table/list layout component
-- [ ] Make layout responsive
+- [ ] ~~Create API service/hooks for data fetching~~
+- [x] Implement loading states (skeleton/spinner)
+- [x] Implement error handling and error boundaries
+- [x] Build dashboard/table/list layout component
+- [x] Make layout responsive
 
 ### User Interactions
 
-- [ ] Implement search functionality
-- [ ] Add filtering capabilities (at least 2 filters)
-- [ ] Add sorting functionality (multiple columns/criteria)
-- [ ] Create dark/light mode toggle
-- [ ] Persist theme preference (localStorage or state)
+- [x] Implement search functionality
+- [x] Add filtering capabilities ~~(at least 2 filters)~~
+- [x] Add sorting functionality ~~(multiple columns/criteria)~~
+- [x] Create dark/light mode toggle
+- [x] Persist theme preference (localStorage or state)
 
 ### Code Quality
 
-- [ ] Break components into smaller, reusable modules
-- [ ] Add TypeScript type annotations throughout
-- [ ] Write at least 1 unit test for a key component
-- [ ] Optional: Add tests for hooks/utilities if applicable
+- [x] Break components into smaller, reusable modules
+- [x] Add TypeScript type annotations throughout
+- [x] Write at least 1 unit test for a key component
+- [ ] ~~Optional: Add tests for hooks/utilities if applicable~~
 
 ## 📝 Documentation & Leadership
 
