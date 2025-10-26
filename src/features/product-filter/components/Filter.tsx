@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useEffect, useState, type SyntheticEvent } from 'react';
 import SkeletonLoader from '../../../components/SkeletonLoader';
 import { useProductFilter } from '../contexts/ProductFilterContext';
+import ThemeToggle from '../../theme/ThemeToggle';
 
 export default function Filter() {
   const { filters, setFilters } = useProductFilter();
@@ -9,8 +10,6 @@ export default function Filter() {
   const { selectedCategory, searchTerm, sortOrder } = filters || {};
 
   const [categoryList, setCategoryList] = useState([]);
-  // const [search, setSearch] = useState('');
-  // const [sort, setSort] = useState('asc');
 
   useEffect(() => {
     const fetchCategoryList = async () => {
@@ -91,6 +90,8 @@ export default function Filter() {
           {'>'}
         </span>
       </div>
+
+      <ThemeToggle />
     </div>
   );
 }

@@ -1,7 +1,19 @@
 @import 'tailwindcss';
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   --root-padding: 2rem;
+}
+
+html {
+  background-color: beige;
+  transition: all 0.3s ease-in-out;
+}
+
+html.dark {
+  background-color: lightslategrey;
+  transition: all 0.3s ease-in-out;
 }
 
 body {
