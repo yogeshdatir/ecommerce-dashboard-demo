@@ -15,7 +15,7 @@
 
 - [ ] ~~Create API service/hooks for data fetching~~
 - [x] Implement loading states (skeleton/spinner)
-- [ ] Implement error handling and error boundaries
+- [x] Implement error handling and error boundaries
 - [x] Build dashboard/table/list layout component
 - [x] Make layout responsive
 
